@@ -105,8 +105,7 @@ chart.selectAll('div')
     d3.select(this).select('div')
       .classed('hidden', false)
       .transition().duration(750)
-      .style('opacity', '1')
-      ;
+      .style('opacity', '1');
 	})
 	.on('mouseout', function() {
     d3.select('#tooltip').classed('hidden', true);
@@ -125,8 +124,7 @@ chart.selectAll('div')
 	.on('click', function(d) {
     var loop = new Audio(d.audio);
     loop.play();
-	})
-  ;
+	});
 
 var svg = d3.select('svg');
 
@@ -141,8 +139,7 @@ var xAxis = d3.svg.axis()
 svg.append('g')
   .attr('class', 'x axis')
   .attr('transform', 'translate(0,' + 475 + ')')
-  .call(xAxis)
-  ;
+  .call(xAxis);
 
 var scaleLines = [2000, 3000, 4000, 5000, 6000];
 for (var i = 0; i < scaleLines.length; i++) {
