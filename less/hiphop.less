@@ -1,0 +1,84 @@
+@house-red: #f00;
+@scale-color: #ccc;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "franklin-gothic-urw";
+}
+
+svg {
+/*   width: 940px; */
+  height: 520px;
+  background-color: #f0f0f0;
+}
+
+#chart {
+  position: relative;
+/*   width: 940px; */
+}
+
+#tooltip {
+  position: absolute;
+  width: 200px;
+  padding: 10px;
+  background-color: @house-red;
+  color: #fff;
+  border: 1px solid @house-red;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 2px 15px 0px rgba(25, 25, 25, 0.8);
+  -moz-box-shadow: 0px 2px 15px 0px rgba(25, 25, 25, 0.8);
+  box-shadow: 0px 2px 15px 0px rgba(25, 25, 25, 0.8);
+}
+@media (min-width: 769px) {
+  #tooltip::after {
+    bottom: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(0, 0, 0, 0);
+    border-bottom-color: @house-red;
+    border-width: 10px;
+    margin-left: -10px;
+  }
+}
+
+g.tick text {
+  stroke: none;
+  fill: @scale-color;
+}
+
+.scale line {
+  stroke-width: 1px;
+  stroke: @scale-color;
+  stroke-dasharray: 5, 5;
+}
+
+div.artist {
+  position: absolute;
+  width: 78px;
+  height: 78px;
+  border: 2px solid @house-red;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  div.artist {
+    width: 38px;
+    height: 38px;
+    border: 1px solid @house-red;
+    background-size: 50px 50px;
+  }
+  img.play {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.hidden {
+  display: none;
+}
